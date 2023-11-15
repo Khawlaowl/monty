@@ -4,7 +4,7 @@
  * push - Pushes a new node onto the stack.
  *
  * This function create a new node with the given line_number and add it
- * to the top of the stack. If memory allocation fail, it calls malloc_error
+ * to the top of the stack. If memory allocation fail
  * and returns without modifying the stack.
  *
  * @stack: A pointer to the pointer to the stack's top node.
