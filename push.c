@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * push - Pushes a new node with the given value onto the stack.
+ * f_push - Pushes a new node with the given value onto the stack.
  * @stack: A pointer to the top of the stack.
  * @value: The value to be pushed onto the stack.
  *
@@ -14,7 +14,7 @@
  * Return: None.
  */
 
-void push(stack_t **stack, int value)
+void f_push(stack_t **stack, int value)
 {
 	stack_t *new_node;
 
