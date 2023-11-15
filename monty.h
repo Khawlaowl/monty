@@ -8,7 +8,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
-
+#define QUEUE_MODE 1
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -39,8 +39,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
-void f_push(stack_t **stack, int value);
+void f_push(stack_t **head, unsigned int counter);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);

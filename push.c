@@ -13,24 +13,31 @@
  *
  * Return: None.
  */
+void push(stack_t **stack, int value, int mode, unsigned int counter) {
+    if (mode == QUEUE_MODE) {
+        // Add logic for queue mode, if needed
+        fprintf(stderr, "L%d: Queue mode not supported in push function\n", counter);
+        exit(EXIT_FAILURE);
+    }
 
-void f_push(stack_t **stack, int value)
-{
-	stack_t *new_node;
+    if (value < 0 || value > 9) {
+        fprintf(stderr, "L%d: usage: push integer\n", counter);
+        exit(EXIT_FAILURE);
+    }
 
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
+    stack_t *new_node = malloc(sizeof(stack_t));
+    if (new_node == NULL) {
+        fprintf(stderr, "Error: malloc failed\n");
+        exit(EXIT_FAILURE);
+    }
 
-	new_node->n = value;
-	new_node->prev = NULL;
-	new_node->next = *stack;
+    new_node->n = value;
+    new_node->prev = NULL;
+    new_node->next = *stack;
 
-	if (*stack != NULL)
-		(*stack)->prev = new_node;
+    if (*stack != NULL) {
+        (*stack)->prev = new_node;
+}
 
-	*stack = new_node;
+*stack = new_node;
 }
