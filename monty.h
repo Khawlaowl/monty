@@ -57,4 +57,13 @@ void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
 void stack(stack_t **stack, unsigned int line_number);
 void queue(stack_t **stack, unsigned int line_number);
+
+void free_stack(stack_t *stack);
+typedef struct bus_s {
+char *arg;
+FILE *file;
+char *content;
+int lifi;
+} bus_t;
+extern bus_t bus;
 #endif

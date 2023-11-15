@@ -15,7 +15,6 @@
  */
 void push(stack_t **stack, int value, int mode, unsigned int counter) {
     if (mode == QUEUE_MODE) {
-        // Add logic for queue mode, if needed
         fprintf(stderr, "L%d: Queue mode not supported in push function\n", counter);
         exit(EXIT_FAILURE);
     }
@@ -39,5 +38,5 @@ void push(stack_t **stack, int value, int mode, unsigned int counter) {
         (*stack)->prev = new_node;
 }
 
-*stack = new_node;
+**stack = new_node;
 }
