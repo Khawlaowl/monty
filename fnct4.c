@@ -14,18 +14,16 @@
  */
 void pstr(stack_t **stack, unsigned int line_number)
 {
-stack_t *current;
-int value;
-
-current = *stack;
-
-while (current && current->n != 0 && isascii(current->n))
+stack_t *current = *stack;
+(void)line_number;
+while (current != NULL)
+if (current->n > 127 || current->n <= 0)
 {
-value = current->n;
-putchar(value);
+break;
+}
+{
+printf("%c", current->n);
 current = current->next;
 }
-if (!current || current->n == 0)
-putchar('\n');
-*stack = current;
+printf("\n");
 }
