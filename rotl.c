@@ -11,7 +11,8 @@ if (*head == NULL || (*head)->next == NULL)
 {
 return;
 }
-stack_t *last = *head;
+stack_t *last;
+last= *head;
 while (last->next != NULL)
 {
 last = last->next;
