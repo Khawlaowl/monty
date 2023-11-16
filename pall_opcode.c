@@ -18,6 +18,6 @@ void pall_func(stack_t **stack, unsigned int ln_number)
 	while (topical)
 	{
 		printf("%d\n", topical->n);
-		opictal = topical->next;
+		topical = topical->next;
 	}
 }

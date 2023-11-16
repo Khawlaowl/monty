@@ -15,8 +15,8 @@ int execute_f(char *content, stack_t **stack, unsigned int numlin, FILE *file)
 {
 	char *content_copy = strdup(content), *token, *value;
 	int valu, i = 0;
-	instruction_t Spe_func[] = {{"push", push_func},
-	{"pall", pall_func}, {"pint", pint_func},
+	instruction_t Spe_func[] = {{"push", push},
+	{"pall", pall}, {"pint", pint},
 	{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
 	{"div", div_}, {"mul", mul}, {"mod", mod}, {"pchar", pchar}, {"pstr", pstr},
 	{"div", div_}, {"rotl", rotl}, {"rotr", rotr}, {NULL, NULL}};

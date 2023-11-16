@@ -13,7 +13,7 @@ void pint_func(stack_t **stack, unsigned int ln_number)
 {
 	if (!stack || !*stack)
 	{
-		pint_coderr(ln_number);
+		pint_error(ln_number);
 	}
 
 	printf("%d\n", (*stack)->n);
