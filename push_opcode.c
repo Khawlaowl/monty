@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * push_func - Pushes a new node onto the stack.
+ * push - Pushes a new node onto the stack.
  *
  * This function create a new node with the given line_number and add it
  * to the top of the stack. If memory allocation fail

@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pint_func - Prints the value at the top of the stack.
+ * pint - Prints the value at the top of the stack.
  *
  * This function prints the integer value of the top element of the stack. If
  * the stack is empty, it calls the pint_error function to handle the error.

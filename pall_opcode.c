@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pall_func - Prints all the elements of the stack.
+ * pall - Prints all the elements of the stack.
  *
  * This function prints the integer data of all nodes in the stack, starting
  * from the top. The line_number parameter is not used in this function.
