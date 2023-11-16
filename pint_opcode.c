@@ -9,7 +9,7 @@
  * @stack: A pointer to the pointer to the stack's top node.
  * @ln_number: The line number from the Monty file.
  */
- void pint_func(stack_t **stack, unsigned int ln_number)
+void pint_func(stack_t **stack, unsigned int ln_number)
 {
 	if (!stack || !*stack)
 	{
