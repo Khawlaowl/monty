@@ -7,17 +7,17 @@
  * from the top. The line_number parameter is not used in this function.
  *
  * @stack: A pointer to the pointer to the stack's top node.
- * @ln_number: Unused parameter (required by Monty file parsing).
+ * @line_number: Unused parameter (required by Monty file parsing).
  */
-void pall_func(stack_t **stack, unsigned int ln_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *topical = *stack;
+	stack_t *current = *stack;
 
-	(void)ln_number;
+	(void)line_number;
 
-	while (topical)
+	while (current)
 	{
-		printf("%d\n", topical->n);
-		topical = topical->next;
+		printf("%d\n", current->n);
+		current = current->next;
 	}
 }

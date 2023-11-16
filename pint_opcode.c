@@ -7,13 +7,13 @@
  * the stack is empty, it calls the pint_error function to handle the error.
  *
  * @stack: A pointer to the pointer to the stack's top node.
- * @ln_number: The line number from the Monty file.
+ * @line_number: The line number from the Monty file.
  */
-void pint_func(stack_t **stack, unsigned int ln_number)
+void pint(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack)
 	{
-		pint_error(ln_number);
+		pint_error(line_number);
 	}
 
 	printf("%d\n", (*stack)->n);

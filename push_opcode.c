@@ -8,27 +8,27 @@
  * and returns without modifying the stack.
  *
  * @stack: A pointer to the pointer to the stack's top node.
- * @ln_number: The line number from the Monty file.
+ * @line_number: The line number from the Monty file.
  */
-void push_func(stack_t **stack, unsigned int ln_number)
+void push(stack_t **stack, unsigned int line_number)
 {
 
-	stack_t *create_node = malloc(sizeof(stack_t));
+	stack_t *new_node = malloc(sizeof(stack_t));
 
-	if (create_node == NULL)
+	if (new_node == NULL)
 	{
 		malloc_error();
 		return;
 	}
 
-	create_node->n = ln_number;
-	create_node->prev = NULL;
-	create_node->next = *stack;
+	new_node->n = line_number;
+	new_node->prev = NULL;
+	new_node->next = *stack;
 
 	if (*stack != NULL)
 	{
-		(*stack)->prev = create_node;
+		(*stack)->prev = new_node;
 	}
 
-	*stack = create_node;
+	*stack = new_node;
 }
