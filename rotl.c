@@ -1,43 +1,32 @@
 #include "monty.h"
 
 /**
- * f_rotl - rotates the stack to the top
- * @head: double pointer to the head of the stack
- * @counter: unused parameter (for consistency with opcode function signature)
+ * rotl - Rotates the stack to the left.
+ * @stack: A pointer to the stack.
+ * @line_number: The current line number (unused).
  */
-void f_rotl(stack_t **head, __attribute__((unused)) unsigned int counter)
+void rotl(stack_t **stack, unsigned int line_number)
 {
-<<<<<<< HEAD
-stack_t *last;
-if (*head == NULL || (*head)->next == NULL)
-{
-return;
-}
-last= *head;
-while (last->next != NULL)
-{
-last = last->next;
-}
-last->next = *head;
-(*head)->prev = last;
-*head = (*head)->next;
-(*head)->prev = NULL;
-last->next->next = NULL;
-=======
-	if (*head == NULL || (*head)->next == NULL)
-	{
+	stack_t *new_top;
+	stack_t *current;
+
+	(void)line_number;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return;
-	}
-	stack_t *last;
-	last= *head;
-	while (last->next != NULL)
+
+	new_top = (*stack)->next;
+	current = new_top;
+
+	while (current->next != NULL)
 	{
-		last = last->next;
+		current = current->next;
 	}
-	last->next = *head;
-	(*head)->prev = last;
-	*head = (*head)->next;
-	(*head)->prev = NULL;
-	last->next->next = NULL;
->>>>>>> 47a0ec24ceca51997d95c98e33aa7b7cbd662a76
+
+	current->next = *stack;
+	(*stack)->prev = current;
+	(*stack)->next = NULL;
+	new_top->prev = NULL;
+
+	*stack = new_top;
 }
