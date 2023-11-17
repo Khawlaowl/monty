@@ -1,15 +1,11 @@
 #include "monty.h"
 
 /**
- * push_error - Handle  error when the push command has an invalid argument.
+ * push_error - Report a "push" command usage error.
  *
- * This function is called when an attempt to execute the 'push' command with
- * an invalid argument (non-integer) is encountered in the Monty file. It
- * prints an error message indicating the line number, closes the file, and
- * exits the program with a failure status.
- *
- * @line_number: The line number from the Monty file where the error occurred.
- * @file: A pointer to the Monty file being processed.
+ * @line_number: The line number where the error occurred.
+ * @file: sdv
+ * Return: No return value, exits with failure status.
  */
 void push_error(unsigned int line_number, FILE *file)
 {
@@ -19,23 +15,17 @@ void push_error(unsigned int line_number, FILE *file)
 }
 
 /**
- * pall_error - Placeholder function for handling errors during 'pall'.
+ * pall_error - Handle "pall" command when stack is empty.
  *
- * This function is intentionally designed to do nothing and serves as a
- * placeholder for handling errors during the 'pall' command. It is called
- * when an error condition related to 'pall' is detected.
+ * Return: No return value; it does nothing and returns.
  */
 void pall_error(void)
 {
-	return; /* Do nothing */
+	return; /* Do nothing when pall error occurs. */
 }
 
 /**
  * pint_error - Handle "pint" command when the stack is empty.
- *
- * This function is called when an attempt is made to execute the 'pint'
- * command on an empty stack. It prints an error message indicating the
- * line number, and exits the program with a failure status.
  *
  * @line_number: The line number where the error occurred.
  * Return: No return value; prints an error message and exits with failure
@@ -44,5 +34,21 @@ void pall_error(void)
 void pint_error(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * global_error - Handle errors and exit the program.
+ * @lr: The line number where the error occurred.
+ * @file: A pointer to the file that's being processed (can be NULL).
+ * @token: A string representing the problematic instruction.
+ * @stack: A pointer to a stack data structure (can be NULL).
+ */
+void global_error(unsigned int lr, FILE *file, char *token, stack_t **stack)
+{
+	fprintf(stderr, "L%d: unknown instruction %s\n", lr, token);
+	free_stack(stack);
+	free(token);
+	fclose(file);
 	exit(EXIT_FAILURE);
 }

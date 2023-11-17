@@ -1,13 +1,9 @@
 #include "monty.h"
-
 /**
- * pop_error - Handles an error when attempting to pop from an empty stack.
+ * pop_error - Handle error on popping an empty stack.
  *
- * This function is called when an attempt is made to pop an element from an
- * empty stack. It prints an error message indicating the line number and
- * exits the program with a failure status.
- *
- * @line_number: The line number from the Monty file where the error occurred.
+ * @line_number: Line number where the error occurred.
+ * Return: No return value; exits with failure status.
  */
 void pop_error(unsigned int line_number)
 {
@@ -16,13 +12,10 @@ void pop_error(unsigned int line_number)
 }
 
 /**
- * swap_error - Handle an error when attempt to swap element in a short stack
+ * swap_error - Handle error on swapping a too short stack.
  *
- * This function is called when an attempt is made to swap elements in a stack
- * that contains fewer than two elements. It prints an error message indicating
- * the line number and exits the program with a failure status.
- *
- * @line_number: The line number from the Monty file where the error occurred.
+ * @line_number: Line number where the error occurred.
+ * Return: No return value; exits with failure status.
  */
 void swap_error(unsigned int line_number)
 {
@@ -31,13 +24,10 @@ void swap_error(unsigned int line_number)
 }
 
 /**
- * add_error - Handle error when attempt to add elements in short stack
+ * add_error - Handle error on adding to a too short stack.
  *
- * This function is called when an attempt is made to add elements in a stack
- * that contains fewer than two elements. It prints an error message indicating
- * the line number and exits the program with a failure status.
- *
- * @line_number: The line number from the Monty file where the error occurred.
+ * @line_number: Line number where the error occurred.
+ * Return: No return value; exits with failure status.
  */
 void add_error(unsigned int line_number)
 {
@@ -46,11 +36,9 @@ void add_error(unsigned int line_number)
 }
 
 /**
- * malloc_error - Handles an error when memory allocation (malloc) fails.
+ * malloc_error - Report error on failed memory allocation.
  *
- * This function is called when an attempt to allocate memory using malloc
- * fails. It prints an error message indicating the failure and exits the
- * program with a failure status.
+ * Return: No return value; exits with failure status.
  */
 void malloc_error(void)
 {
