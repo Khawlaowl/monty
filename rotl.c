@@ -7,11 +7,11 @@
  */
 void f_rotl(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
+stack_t *last;
 if (*head == NULL || (*head)->next == NULL)
 {
 return;
 }
-stack_t *last;
 last= *head;
 while (last->next != NULL)
 {
